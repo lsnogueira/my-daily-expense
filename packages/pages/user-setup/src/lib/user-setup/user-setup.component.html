@@ -1,1 +1,31 @@
-<main>my first standalone component</main>
+<main>
+  <article>
+    <section>
+      <label for="spendingCeiling">Selecione o tipo do teto de gasto</label>
+      <select name="teto" id="spendingCeiling">
+        <option [value]="null">Mensal</option>
+        <option [value]="null">Diário</option>
+        <option [value]="null">Semanal</option>
+      </select>
+
+      <label for="typeExpense">Selecione o tipo de gasto</label>
+      <select name="gasto" id="typeExpense">
+        <option [value]="null">Alimentício</option>
+        <option [value]="null">Transporte</option>
+        <option [value]="null">Saúde</option>
+        <option [value]="null">Rolê</option>
+      </select>
+
+      <label for="spendingCapValue">Valor do teto</label>
+      <input type="number" name="valor" id="spendingCapValue" />
+
+      <label for="persistData">Persistir dados?</label>
+      <input type="checkbox" name="Persistir" id="persistData" />
+    </section>
+
+    <section class="submit-area">
+      <button type="reset">Limpar</button>
+      <button type="submit">Começar</button>
+    </section>
+  </article>
+</main>
