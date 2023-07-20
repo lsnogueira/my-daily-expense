@@ -8,8 +8,13 @@ const routes: Routes = [
       import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
+    path: 'setup',
+    loadComponent: () =>
+      import('pages/user-setup').then((m) => m.UserSetupComponent),
+  },
+  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'setup',
     pathMatch: 'full',
   },
 ];
