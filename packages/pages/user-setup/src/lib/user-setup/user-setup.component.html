@@ -1,31 +1,39 @@
 <main>
   <article>
-    <section>
-      <label for="spendingCeiling">Selecione o tipo do teto de gasto</label>
-      <select name="teto" id="spendingCeiling">
-        <option [value]="null">Mensal</option>
-        <option [value]="null">Diário</option>
-        <option [value]="null">Semanal</option>
-      </select>
+    <div class="title-wrapper">
+      <img
+        class="center-logo"
+        src="/assets/images/cash.svg"
+        alt="icone desenho de mão extendendo dinheiro"
+      />
+      <h2>My daily expense</h2>
+    </div>
+    <form>
+      <section class="fields-wrapper">
+        <mat-form-field>
+          <mat-label>Selecione o tipo do teto de gasto</mat-label>
+          <mat-select required>
+            <mat-option>--</mat-option>
+            <mat-option [value]="null">Mensal</mat-option>
+            <mat-option [value]="null">Diário</mat-option>
+            <mat-option [value]="null">Semanal</mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+        <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+        </mat-form-field>
 
-      <label for="typeExpense">Selecione o tipo de gasto</label>
-      <select name="gasto" id="typeExpense">
-        <option [value]="null">Alimentício</option>
-        <option [value]="null">Transporte</option>
-        <option [value]="null">Saúde</option>
-        <option [value]="null">Rolê</option>
-      </select>
+        <mat-form-field>
+          <mat-label>Valor do teto</mat-label>
+          <input required matInput type="number" placeholder="R$ 0,00" />
+        </mat-form-field>
 
-      <label for="spendingCapValue">Valor do teto</label>
-      <input type="number" name="valor" id="spendingCapValue" />
-
-      <label for="persistData">Persistir dados?</label>
-      <input type="checkbox" name="Persistir" id="persistData" />
-    </section>
+        <mat-slide-toggle disabled>Persistir dados?</mat-slide-toggle>
+      </section>
+    </form>
 
     <section class="submit-area">
-      <button type="reset">Limpar</button>
-      <button type="submit">Começar</button>
+      <button mat-raised-button type="reset" color="primary">Limpar</button>
+      <button mat-raised-button type="submit" color="accent">Começar</button>
     </section>
   </article>
 </main>
